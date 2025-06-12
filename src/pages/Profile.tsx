@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import useToken from "../hooks/useToken";
 
 const Profile = () => {
+    const {removeToken} = useToken(); // Assuming useToken provides token management, though not used here
 
     const navigate = useNavigate();
 
     const simulateLogOut = () => {
-        localStorage.removeItem("isAuthenticated");
+        removeToken(); // Remove token from local storage
         console.log("User logged out");
         navigate("/"); // Redirect to home page after logout
-        // Redirect to home or login page if needed
     }
 
     return (

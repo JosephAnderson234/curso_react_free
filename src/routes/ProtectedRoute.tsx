@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import useToken from "../hooks/useToken";
 
 type PropsProtectedRoutes = {
     children?: React.ReactNode;
@@ -8,9 +9,8 @@ type PropsProtectedRoutes = {
 
 const ProtectedRoutes = ({ children, url = "/login"  }: PropsProtectedRoutes) => {
 
-    const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-
-    if (!isAuthenticated) {
+    const { token } = useToken();
+    if (!token ) {
         return <Navigate to={url} />;
     }
 

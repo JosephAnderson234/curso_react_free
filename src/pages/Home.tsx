@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import useToken from "../hooks/useToken";
 
 const Home = () => {
 
+    const { setToken } = useToken(); // Assuming useToken is used to manage authentication state
     const navigate = useNavigate();
 
     const simulateLogin = ()=>{
         // Simulate a login action
-        localStorage.setItem('isAuthenticated', "true");
+        setToken("simulated_token"); // Set a simulated token
         console.log('User logged in');
         navigate("/me")
     }
