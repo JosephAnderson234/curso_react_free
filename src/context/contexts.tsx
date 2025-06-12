@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import {type contextType } from "../types/contextTypes";
+import {type contextToken } from "../types/contextTypes";
 
-export const TokenContext = createContext<contextType | null>(null);
+export const TokenContext = createContext<contextToken | null>(null);
