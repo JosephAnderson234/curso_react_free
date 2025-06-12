@@ -1,3 +1,24 @@
+# Get Started
+
+First you need to clone de repository and install the dependencies:
+
+```bash
+git clone git@github.com:JosephAnderson234/curso_react_free.
+cd curso_react_free
+npm install
+```
+
+Then you can run the development server:
+
+```bash
+npm run dev
+```
+
+Now you can open your browser and go to [http://localhost:5173](http://localhost:5173) to see the app running.
+
+
+
+# Generic ESLint Configuration for TypeScript Projects
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
