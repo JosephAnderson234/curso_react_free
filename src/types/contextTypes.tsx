@@ -5,4 +5,6 @@ export interface AuthContextType {
 	login: (loginRequest: LoginRequest) => Promise<void>;
 	logout: () => void;
 	session?: string | null;
+	isLoggingOut: boolean;
+	setIsLoggingOut: (value: boolean) => void;
 }

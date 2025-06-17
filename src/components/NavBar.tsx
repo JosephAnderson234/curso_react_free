@@ -1,15 +1,12 @@
 import useAuth from "@hooks/useAuthContext";
-import { useNavigate } from "react-router-dom";
-
-
 const Navbar = () => {
 
-    const navigate = useNavigate(); // Hook to programmatically navigate
-    const { logout, session } = useAuth(); // Assuming useAuth provides logout management
+    const { logout, session, setIsLoggingOut} = useAuth();
     const handleLogout = () => {
         logout();
-        navigate("/"); // Redirect to login after logout
-    }
+        setIsLoggingOut(true);
+    };
+
     return (
         <nav className="bg-gray-800 p-4">
             <div className="container mx-auto flex justify-between items-center">

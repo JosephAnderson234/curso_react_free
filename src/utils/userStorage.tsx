@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 
 type UserStore = {
     token: string | null;
-    setToken: (token: string|null) => void;
+    setToken: (token: string | null) => void;
 };
 
 export const useUserStore = create<UserStore>()(
@@ -17,3 +17,4 @@ export const useUserStore = create<UserStore>()(
         }
     )
 );
+
