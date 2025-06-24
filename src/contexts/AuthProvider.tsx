@@ -1,6 +1,6 @@
 import { AuthContext } from "./contexts";
 import type { LoginRequest, RegisterRequest } from "@interfaces/authTypes";
-import { login, register } from "@services/api";
+import { login, register } from "@services/auth/auth-req";
 import { useUserStore } from "@utils/userStorage";
 import { useState } from "react";
 async function loginHandler(
@@ -18,7 +18,7 @@ async function signupHandler(
     setSession: (value: string) => void,
 ) {
     const response = await register(signupRequest);
-    setSession(response.data.token);
+    setSession(response.token);
 }
 
 const AuthProvider = (props: { children: React.ReactNode }) => {

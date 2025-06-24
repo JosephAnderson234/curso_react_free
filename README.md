@@ -17,6 +17,11 @@ npm run dev
 Now you can open your browser and go to [http://localhost:5173](http://localhost:5173) to see the app running.
 
 
+Holiwis espero que disfrutes de este curso, si tienes alguna duda o sugerencia puedes escribirme a mi correo joseph.cose@utec.edu.pe
+
+Se ha usado una implementación de algunas estrcuturas de los e2e
+
+revisa el formato que debe tener el archivo `.env` para que puedas correr el proyecto sin problemas, fijate en el archivo `.env.example` y crea tu propio archivo `.env` con las variables de entorno necesarias.
 
 # Generic ESLint Configuration for TypeScript Projects
 # React + TypeScript + Vite
