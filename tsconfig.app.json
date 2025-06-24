@@ -10,7 +10,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
@@ -45,9 +45,6 @@
       "@interfaces/*": [
         "src/interfaces/*"
       ],
-      "@types/*": [
-        "src/types/*"
-      ],
       "@contexts/*": [
         "src/contexts/*"
       ],
@@ -59,5 +56,10 @@
       ],
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "server"
+  ]
 }

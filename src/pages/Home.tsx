@@ -1,16 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import useToken from "../hooks/useToken";
+import useAuth from "@hooks/useAuthContext";
+import type { LoginRequest } from '@/types/authTypes';
 
 const Home = () => {
 
-    const { setToken } = useToken(); // Assuming useToken is used to manage authentication state
+    const {login} = useAuth(); // Assuming useAuth provides login management, though not used here
+
     const navigate = useNavigate();
 
     const simulateLogin = ()=>{
         // Simulate a login action
-        setToken("simulated_token"); // Set a simulated token
+        const tryLogin: LoginRequest = {
+            email: "a@test.com",
+            password: "anfjkbgkjb"
+        }
+        login(tryLogin); // This would typically set a token in local storage or context
         console.log('User logged in');
-        navigate("/me")
+        navigate("/profile");
     }
     return (
         <div>
