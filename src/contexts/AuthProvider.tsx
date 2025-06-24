@@ -3,6 +3,8 @@ import type { LoginRequest, RegisterRequest } from "@interfaces/authTypes";
 import { login, register } from "@services/auth/auth-req";
 import { useUserStore } from "@utils/userStorage";
 import { useState } from "react";
+import Api from "@services/api";
+
 async function loginHandler(
     loginRequest: LoginRequest,
     setSession: (value: string) => void,
@@ -25,6 +27,10 @@ const AuthProvider = (props: { children: React.ReactNode }) => {
     const [isLoggingOut, setIsLoggingOut] = useState(false);
     const token = useUserStore((state) => state.token);
     const setToken = useUserStore((state) => state.setToken);
+
+    if (token){
+        Api.getInstance().then((api)=>api.authorization=token);
+    }
     
     return (
         <AuthContext.Provider
