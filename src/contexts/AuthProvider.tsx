@@ -2,7 +2,6 @@ import { AuthContext } from "./contexts";
 import type { LoginRequest, RegisterRequest } from "@interfaces/authTypes";
 import { login, register } from "@services/auth/auth-req";
 import { useUserStore } from "@utils/userStorage";
-import { useState } from "react";
 import Api from "@services/api";
 
 async function loginHandler(
@@ -24,7 +23,6 @@ async function signupHandler(
 }
 
 const AuthProvider = (props: { children: React.ReactNode }) => {
-    const [isLoggingOut, setIsLoggingOut] = useState(false);
     const token = useUserStore((state) => state.token);
     const setToken = useUserStore((state) => state.setToken);
 
@@ -38,12 +36,9 @@ const AuthProvider = (props: { children: React.ReactNode }) => {
                 register: (signupRequest) => signupHandler(signupRequest, setToken),
                 login: (loginRequest) => loginHandler(loginRequest, setToken),
                 logout: () => {
-                    setIsLoggingOut(true);
                     setToken(null);
                 },
-                session: token,
-                isLoggingOut,
-                setIsLoggingOut,
+                session: token
             }}
         >
             {props.children}

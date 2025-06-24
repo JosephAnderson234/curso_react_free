@@ -1,10 +1,9 @@
 import useAuth from "@hooks/useAuthContext";
 const Navbar = () => {
 
-    const { logout, session, setIsLoggingOut} = useAuth();
+    const { logout, session} = useAuth();
     const handleLogout = () => {
         logout();
-        setIsLoggingOut(true);
     };
 
     return (

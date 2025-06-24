@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useAuth from "@hooks/useAuthContext";
-import type { LoginRequest } from '@/types/authTypes';
+import type { LoginRequest } from '@interfaces/authTypes';
 
 const Home = () => {
 
