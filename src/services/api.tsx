@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { LoginRequest, RegisterRequest } from "@/types/authTypes";
+import type { LoginRequest, RegisterRequest } from "@interfaces/authTypes";
 
 const BACKEND_URL = import.meta.env.VITE_API_BACKEND || "http://localhost:3000";
 

@@ -13,7 +13,7 @@ export const useUserStore = create<UserStore>()(
             setToken: (token) => set({ token }),
         }),
         {
-            name: 'user-storage',
+            name: 'user-auth',
         }
     )
 );

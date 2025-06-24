@@ -1,6 +1,6 @@
 import { AuthContext } from "./contexts";
-import type { LoginRequest, RegisterRequest } from "@/types/authTypes";
-import { login, register } from "@utils/api";
+import type { LoginRequest, RegisterRequest } from "@interfaces/authTypes";
+import { login, register } from "@services/api";
 import { useUserStore } from "@utils/userStorage";
 import { useState } from "react";
 async function loginHandler(
