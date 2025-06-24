@@ -4,6 +4,11 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import Profile from "@pages/Profile";
 import Home from "@pages/Home";
 
+//models
+import ReactHookForm from "src/models/FormWithReactHookForm";
+import ReactSelect from "src/models/ReactSelect";
+import TenStackTable from "src/models/TenStackTable";
+
 export const router = createBrowserRouter(
     [{
         path: "/",
@@ -36,6 +41,18 @@ export const router = createBrowserRouter(
                         element: <Profile />
                     }
                 ]
+            },
+            {
+                path: "react-hook-form",
+                element: <ReactHookForm />
+            },
+            {
+                path: "react-select",
+                element: <ReactSelect />
+            },
+            {
+                path: "ten-stack-table",
+                element: <TenStackTable />
             },
             {
                 path: "*",
